@@ -42,4 +42,4 @@ Any profession. Examples are included for iOS developers, procurement, mechanica
 | Too many / too few jobs | Change `min_fit_score` and `daily_new_jobs` in `job-hunt/preferences.yaml`, or just tell Claude "only show me jobs above 85". |
 | Want to stop everything | Say "pause job hunter". |
 
-Still stuck? [Open an issue](https://github.com/<owner>/job-hunter/issues/new/choose) — include what you said and what happened (remove personal details).
+Still stuck? [Open an issue](https://github.com/mohammedsharukhh/job-hunter/issues/new/choose) — include what you said and what happened (remove personal details).
