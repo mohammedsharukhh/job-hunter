@@ -1,0 +1,27 @@
+name: 🐞 Something isn't working
+description: Tell us what you asked Claude and what happened
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What did you say / do?
+      placeholder: e.g. "set up job hunter" with my resume attached
+    validations: { required: true }
+  - type: textarea
+    id: happened
+    attributes:
+      label: What happened instead?
+      description: Paste any error message. Please remove personal details (names, emails, phone).
+    validations: { required: true }
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where are you using it?
+      options: [Claude desktop app, Claude Code, Other]
+    validations: { required: true }
+  - type: input
+    id: version
+    attributes:
+      label: Plugin version
+      placeholder: e.g. 0.3.1

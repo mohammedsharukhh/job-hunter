@@ -1,0 +1,13 @@
+name: 💡 Idea or request
+description: A new job site, country, profession, or feature
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help you?
+    validations: { required: true }
+  - type: textarea
+    id: why
+    attributes:
+      label: Why / example
