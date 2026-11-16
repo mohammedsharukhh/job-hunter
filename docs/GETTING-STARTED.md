@@ -15,12 +15,12 @@ No coding needed. You'll install the plugin, give it your resume once, and from 
 ## Step 1 — Install the plugin
 
 **Claude desktop app**
-1. Go to the [latest release](https://github.com/<owner>/job-hunter/releases/latest) and download **`job-hunter.plugin`**.
+1. Go to the [latest release](https://github.com/mohammedsharukhh/job-hunter/releases/latest) and download **`job-hunter.plugin`**.
 2. Double-click it (or drag it into Claude). Click **Install**.
 
 **Claude Code**
 ```
-/plugin marketplace add <owner>/job-hunter
+/plugin marketplace add mohammedsharukhh/job-hunter
 /plugin install job-hunter@job-hunter-marketplace
 ```
 
@@ -82,4 +82,4 @@ Then it creates your private `job-hunt` folder and turns on the schedules. **Tha
 Everything lives in a `job-hunt` folder in your home directory on your computer: your profile, tracker, and one folder per application (job description, resume, cover letter). Nothing is shared unless you choose to.
 
 ## Stuck?
-See the [FAQ & troubleshooting](FAQ.md) or [open an issue](https://github.com/<owner>/job-hunter/issues/new/choose).
+See the [FAQ & troubleshooting](FAQ.md) or [open an issue](https://github.com/mohammedsharukhh/job-hunter/issues/new/choose).

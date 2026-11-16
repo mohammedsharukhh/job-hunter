@@ -11,7 +11,7 @@ Real response rates are how other job seekers decide whether this works. Sharing
 2. Run: `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/share_stats.py --dir job-hunt --role-family <family> --save`
 3. Show the JSON to the user and say plainly what's in it (counts, rates, generic source types, template names, region, month, a random ID) and what is NOT (no names, companies, job titles, emails, URLs, salaries).
 4. If they agree, offer two ways to submit:
-   - Open the project's "📊 Share my results" issue form (`https://github.com/<owner>/job-hunter/issues/new?template=share-stats.yml`) and paste the JSON, or
+   - Open the project's "📊 Share my results" issue form (`https://github.com/mohammedsharukhh/job-hunter/issues/new?template=share-stats.yml`) and paste the JSON, or
    - With the user's OK and the GitHub CLI signed in: save the JSON wrapped in a ```json block to a file and run
-     `gh issue create --repo <owner>/job-hunter --label stats --title stats --body-file <file>`.
+     `gh issue create --repo mohammedsharukhh/job-hunter --label stats --title stats --body-file <file>`.
 5. Re-sharing later reuses the same random ID, so their entry is updated rather than duplicated.
