@@ -126,7 +126,7 @@ def slugify(s): return re.sub(r"[^a-z0-9]+", "-", (s or "").lower()).strip("-")[
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dir", default="job-hunt")
+    ap.add_argument("--dir", default=os.environ.get("JOB_HUNT_DIR") or (os.path.expanduser("~/job-hunt") if os.path.isdir(os.path.expanduser("~/job-hunt")) else "job-hunt"))
     ap.add_argument("--watchlist")
     ap.add_argument("--titles", default="")
     ap.add_argument("--locations", default="")
