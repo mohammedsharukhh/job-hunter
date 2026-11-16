@@ -1,0 +1,3 @@
+{"supported_keywords": ["SQL", "BigQuery", "PostgreSQL", "Power BI", "Tableau", "A/B testing", "cohort", "Python", "pandas", "forecast"],
+ "unsupported_keywords": ["dbt", "Snowflake"],
+ "min_coverage": 0.8, "max_pages": 1, "min_ats": 85}

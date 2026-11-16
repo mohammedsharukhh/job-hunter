@@ -30,6 +30,10 @@ description: Builds an ATS-friendly resume (and optional cover letter) tailored 
    `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/tracker.py update --dir job-hunt --id <id> --status tailored --resume-variant <template>`
 7. Follow the region pack's conventions (`templates/regions/<region>.yaml`): photo or not, length, personal details. E.g. Gulf CVs often state nationality, visa status and notice period; US resumes never include photo, age or marital status.
 
-## Quality check before finishing
-- Open the rendered DOCX/PDF text (e.g. `pandoc resume.docx -t plain`) and confirm it reads cleanly, top to bottom, with no broken sections.
-- Re-scan every bullet against `profile.md` — delete anything you cannot trace.
+## Quality gates before finishing (both must pass)
+1. **ATS self-test** — save the JD keyword list (one per line) to `keywords.txt` in the job folder, then:
+   `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/ats_check.py <job>/<First>_<Last>_<Role>_Resume.pdf --source <job>/resume.md --keywords-file <job>/keywords.txt --max-pages <resume.max_pages>`
+   Target ≥ 85 and no critical failures. Fix what it reports (missing keyword the user truly has → work it in; over page limit → `compact` template or trim; odd glyphs → remove symbols like ★), re-render, re-test. Report the final score to the user. Missing keywords the user doesn't have stay missing — list them as gaps.
+2. **Fact check** — `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/fact_check.py <job>/resume.md --profile job-hunt/profile.md` must report no unsupported numbers, skills, employers or titles. Fix or remove anything it flags (or ask the user and add the fact to `profile.md` if it's true).
+
+The user can also run the ATS self-test on any resume they already have: "check my resume for ATS".

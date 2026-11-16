@@ -1,0 +1,3 @@
+{"supported_keywords": ["Swift", "SwiftUI", "UIKit", "Combine", "Swift Concurrency", "REST", "OAuth", "APNs", "Firebase", "Crashlytics", "TestFlight", "App Store", "StoreKit 2", "Fastlane", "GitHub Actions"],
+ "unsupported_keywords": ["XCTest", "Kotlin"],
+ "min_coverage": 0.8, "max_pages": 1, "min_ats": 85}

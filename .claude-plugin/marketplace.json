@@ -8,7 +8,7 @@
       "name": "job-hunter",
       "source": "./",
       "description": "Find jobs, tailor resumes to each JD, prepare applications, draft HR outreach and track replies \u2014 with your approval before anything is sent.",
-      "version": "0.2.0"
+      "version": "0.3.0"
     }
   ]
 }

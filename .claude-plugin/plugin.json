@@ -1,7 +1,7 @@
 {
   "name": "job-hunter",
-  "version": "0.2.0",
-  "description": "AI job-search copilot: finds and filters matching jobs, tailors an ATS-friendly resume to each job description, prepares portal applications, sends HR emails one by one after you approve the list, finds referrals, preps interviews, negotiates offers, learns from results and shows a dashboard.",
+  "version": "0.3.0",
+  "description": "Honest AI job-search copilot: hourly company watchlist, JD-tailored resumes that are ATS-tested and fact-checked, portal applications and HR emails sent one by one after one approval, referrals, interview prep, offer negotiation, insights and dashboard.",
   "author": {
     "name": "Mahamed Fayaz M"
   },
