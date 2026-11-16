@@ -49,7 +49,7 @@ def bucket(n):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dir", default="job-hunt")
+    ap.add_argument("--dir", default=os.environ.get("JOB_HUNT_DIR") or (os.path.expanduser("~/job-hunt") if os.path.isdir(os.path.expanduser("~/job-hunt")) else "job-hunt"))
     ap.add_argument("--role-family", required=True, choices=ROLE_FAMILIES)
     ap.add_argument("--region", choices=REGIONS)
     ap.add_argument("--save", action="store_true", help="write job-hunt/stats-share.json")

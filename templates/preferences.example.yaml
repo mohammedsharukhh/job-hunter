@@ -31,6 +31,12 @@ outreach:
   follow_up_after_days: 7
   max_follow_ups: 1
 
+automation:
+  auto_start: true                   # start today's run automatically when you open Claude
+  daily_run_time: "09:00"            # scheduled daily job hunt (your timezone)
+  waking_hours: "08-22"              # hourly watchlist runs only in this window
+  morning_brief: true
+
 resume:
   template: classic                  # classic | modern | compact
   ab_test: false                     # alternate templates to learn which gets more replies

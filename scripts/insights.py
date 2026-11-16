@@ -27,7 +27,7 @@ def band(score):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--dir", default="job-hunt")
+    ap.add_argument("--dir", default=os.environ.get("JOB_HUNT_DIR") or (os.path.expanduser("~/job-hunt") if os.path.isdir(os.path.expanduser("~/job-hunt")) else "job-hunt"))
     ap.add_argument("--min-n", type=int, default=3, help="min sends before a group counts as evidence")
     a = ap.parse_args()
     p = os.path.join(a.dir, "tracker.csv")

@@ -9,6 +9,7 @@ Commands:
   stats   --dir job-hunt
   due     --dir job-hunt [--days 7]         # follow-ups due
   sent-today --dir job-hunt                  # emails/applications sent today (for daily caps)
+  mark-run   --dir job-hunt                  # record today's full run (auto-start hook reads it)
 """
 import argparse, csv, datetime as dt, difflib, json, os, re, sys
 
@@ -64,8 +65,8 @@ def find_dup(rows, company, title, url):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["init", "add", "update", "list", "stats", "due", "sent-today"])
-    ap.add_argument("--dir", default="job-hunt")
+    ap.add_argument("cmd", choices=["init", "add", "update", "list", "stats", "due", "sent-today", "mark-run"])
+    ap.add_argument("--dir", default=os.environ.get("JOB_HUNT_DIR") or (os.path.expanduser("~/job-hunt") if os.path.isdir(os.path.expanduser("~/job-hunt")) else "job-hunt"))
     for a in ["company", "title", "url", "location", "source", "status", "note", "contact", "id",
               "posted", "resume-variant", "email-template", "reason"]:
         ap.add_argument(f"--{a}")
@@ -82,6 +83,10 @@ def main():
             save(a.dir, load(a.dir))  # migrate columns
         print(f"Tracker ready: {path(a.dir)}")
         return
+
+    if a.cmd == "mark-run":  # record that today's full job-hunt run finished (read by the SessionStart hook)
+        open(os.path.join(a.dir, ".last_run"), "w").write(today())
+        print("Marked today's run as done"); return
 
     rows = load(a.dir)
 

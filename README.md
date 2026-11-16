@@ -52,7 +52,10 @@ A Claude plugin (Claude Code and the Claude desktop app) that turns your job hun
 ```
 **Claude desktop app** — download `job-hunter.plugin` from [Releases](../../releases) and open it.
 
-Then say **"set up job hunter"** and attach your resume. After that, every day: **"run my job hunt"**.
+Then say **"set up job hunter"** and attach your resume. **That's the last command you need** — from then on it runs by itself:
+- **Every time you open Claude**, it checks your job hunt and starts today's run automatically if it hasn't happened yet (or just reminds you of interviews and deadlines).
+- **Even when Claude is closed**, scheduled tasks run the daily job hunt, check your watchlist every hour, and send a morning brief.
+- You only step in to approve the day's list (or switch `outreach.mode`). Say **"pause job hunter"** any time to stop it.
 
 ### Connect (recommended)
 - **Email** (Gmail/Outlook connector) — sending, drafts, reply tracking

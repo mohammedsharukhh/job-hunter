@@ -99,5 +99,25 @@ class StatsAndDashboard(unittest.TestCase):
         run(S("insights.py"), "--dir", self.d)
 
 
+
+
+class AutoStartHook(unittest.TestCase):
+    def ctx(self, home):
+        env = dict(os.environ, HOME=home); env.pop("JOB_HUNT_DIR", None)
+        out = subprocess.run([PY, S("session_start.py")], capture_output=True, text=True, env=env, cwd=home).stdout
+        return json.loads(out)["hookSpecificOutput"]["additionalContext"]
+
+    def test_lifecycle(self):
+        home = tempfile.mkdtemp()
+        self.assertIn("not set up", self.ctx(home))
+        ws = os.path.join(home, "job-hunt"); run(S("tracker.py"), "init", "--dir", ws)
+        open(os.path.join(ws, "profile.md"), "w").write("# Me")
+        self.assertIn("AUTO-START", self.ctx(home))
+        run(S("tracker.py"), "mark-run", "--dir", ws)
+        self.assertIn("run is done", self.ctx(home))
+        open(os.path.join(ws, "preferences.yaml"), "w").write("automation:\n  auto_start: false\n")
+        self.assertIn("auto-start is off", self.ctx(home))
+
+
 if __name__ == "__main__":
     unittest.main()
