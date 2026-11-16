@@ -5,3 +5,4 @@ job-hunt/
 !examples/*.md
 __pycache__/
 .DS_Store
+evals/outputs/

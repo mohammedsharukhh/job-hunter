@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>job-hunter — the honest AI job-search copilot for Claude</title>
+<meta name="description" content="Free, open-source Claude plugin: find jobs within hours, tailor an ATS-proof resume to every job description, apply and email HR after one daily approval, prep interviews and track replies.">
+<meta property="og:title" content="job-hunter — the honest AI job-search copilot for Claude">
+<meta property="og:description" content="Find jobs early. Tailor an honest, ATS-proof resume for every one. Apply after one approval a day.">
+<meta property="og:image" content="demo-poster.png">
+<style>
+:root{--bg:#0B1220;--card:#121B2E;--line:#22304A;--ink:#E6EDF7;--muted:#9FB0C8;--dim:#7086A6;--acc:#5EEAD4;--ok:#34D399;--bad:#F87171}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Inter,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc);text-decoration:none}a:hover{text-decoration:underline}
+.w{max-width:1120px;margin:auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+nav b{font-size:19px}nav .links a{margin-left:22px;color:var(--muted)}
+.hero{padding:56px 0 40px;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.eyebrow{color:var(--acc);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+h1{font-size:52px;line-height:1.08;letter-spacing:-.025em;margin:12px 0 18px}
+h1 em{font-style:normal;color:var(--acc)}
+.lead{font-size:20px;color:var(--muted);margin:0 0 28px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:600;border:1px solid var(--line);color:var(--ink)}
+.btn.p{background:var(--acc);color:#04221E;border-color:var(--acc)}.btn:hover{text-decoration:none;filter:brightness(1.08)}
+video{width:100%;border-radius:14px;border:1px solid var(--line);background:#000;display:block}
+.trust{display:flex;gap:26px;color:var(--dim);font-size:14px;margin-top:22px;flex-wrap:wrap}
+section{padding:64px 0;border-top:1px solid #172038}
+h2{font-size:34px;letter-spacing:-.02em;margin:0 0 10px}.sec-lead{color:var(--muted);margin:0 0 34px;max-width:760px}
+.grid{display:grid;gap:18px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{margin:6px 0 6px;font-size:19px}.card p{margin:0;color:var(--muted);font-size:16px}
+.ico{font-size:24px}
+.steps{counter-reset:s}.step{position:relative;padding-left:56px}
+.step:before{counter-increment:s;content:counter(s);position:absolute;left:18px;top:20px;width:28px;height:28px;border-radius:50%;background:#173B3A;color:var(--acc);font-weight:700;display:grid;place-items:center;font-size:15px}
+pre{background:#070C16;border:1px solid var(--line);border-radius:12px;padding:18px 20px;overflow:auto;font:15px/1.7 "DejaVu Sans Mono",ui-monospace,monospace;color:#CFE3F7;margin:0}
+.cmp td,.cmp th{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left}
+.cmp{width:100%;border-collapse:collapse;font-size:16px}.cmp th{color:var(--dim);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.y{color:var(--ok)}.n{color:var(--bad)}
+img.shot{width:100%;border-radius:12px;border:1px solid var(--line)}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:600}details p{color:var(--muted);margin:10px 0 0}
+footer{padding:40px 0 60px;color:var(--dim);font-size:14px;border-top:1px solid #172038}
+@media (max-width:860px){.hero,.g3,.g2{grid-template-columns:1fr}h1{font-size:38px}nav .links{display:none}}
+</style>
+</head>
+<body>
+<div class="w">
+<nav><b>🎯 job-hunter</b><div class="links"><a href="#how">How it works</a><a href="#install">Install</a><a href="#results">Results</a><a class="gh" href="#">GitHub ↗</a></div></nav>
+
+<div class="hero">
+  <div>
+    <div class="eyebrow">Free · open source · for Claude</div>
+    <h1>Apply <em>first</em>, with a resume that <em>fits</em> — and never lies.</h1>
+    <p class="lead">job-hunter is a Claude plugin that watches your target companies, tailors an ATS-proof resume to every job description, prepares applications and HR emails, and sends them one by one after a single daily approval.</p>
+    <div class="btns"><a class="btn p" href="#install">Install free</a><a class="btn" href="#quick">Try it with zero setup</a><a class="btn gh" href="#">★ Star on GitHub</a></div>
+    <div class="trust"><span>✓ MIT licence</span><span>✓ Your data stays local</span><span>✓ Nothing sent without approval</span></div>
+  </div>
+  <video controls preload="metadata" poster="demo-poster.png"><source src="job-hunter-demo.mp4" type="video/mp4"></video>
+</div>
+
+<section id="how">
+  <h2>How it works</h2>
+  <p class="sec-lead">One daily loop. Your time goes into a single review step.</p>
+  <div class="grid g3 steps">
+    <div class="card step"><h3>Watch & find</h3><p>Hourly watchlist on Greenhouse, Lever, Ashby, Workable and SmartRecruiters boards — plus LinkedIn, Naukri, Bayt and career pages. Duplicates, ghost jobs and scams filtered out.</p></div>
+    <div class="card step"><h3>Tailor honestly</h3><p>A resume rewritten for each job description from your master profile. Keyword coverage reported. Missing skills are listed as gaps — never invented.</p></div>
+    <div class="card step"><h3>Prove it passes</h3><p>Every PDF is read back like an applicant-tracking system would, and fact-checked against your profile before it goes anywhere.</p></div>
+    <div class="card step"><h3>Approve once</h3><p>One table: company, role, fit, method, resume. Approve — Claude submits and emails one at a time, minutes apart, within your daily cap.</p></div>
+    <div class="card step"><h3>Inbox & interviews</h3><p>Replies sorted (tests, interviews, rejections, offers), drafts ready, mock interviews with scores, referral asks, salary negotiation.</p></div>
+    <div class="card step"><h3>Learn & improve</h3><p>Dashboard and weekly insights: which sources, resume layouts and email styles get replies — and what skills to learn next.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Proof, not promises</h2>
+  <p class="sec-lead">The same sample resume, read back by the built-in ATS self-test.</p>
+  <div class="grid g2">
+    <div class="card"><h3 class="n">Fancy two-column CV — 60/100 FAIL</h3><pre>✗ reading order    sections scrambled (sidebar)
+✗ icons / glyphs   18 odd glyphs
+~ JD keywords      5/7 present</pre></div>
+    <div class="card"><h3 class="y">job-hunter resume — 96/100 PASS</h3><pre>✓ name, email, phone
+✓ titles, companies, dates in order
+✓ 4/4 bullets intact · 1 page</pre></div>
+  </div>
+  <p style="margin-top:28px"><img class="shot" src="dashboard.png" alt="Job hunt dashboard: funnel, response rate, needs action, follow-ups due"></p>
+</section>
+
+<section>
+  <h2>Why it's different</h2>
+  <p class="sec-lead">Most auto-apply bots optimise for volume. job-hunter optimises for replies — without risking your accounts or your reputation.</p>
+  <table class="cmp">
+    <tr><th></th><th>Typical auto-apply bot</th><th>job-hunter</th></tr>
+    <tr><td>Resume per job</td><td>Generic or keyword-stuffed</td><td class="y">Tailored, fact-checked, ATS-tested</td></tr>
+    <tr><td>Speed to new jobs</td><td>Daily board scrape</td><td class="y">Hourly company watchlist</td></tr>
+    <tr><td>Sending</td><td>Hundreds blindly</td><td class="y">You approve the list · one by one · daily cap</td></tr>
+    <tr><td>Recruiter emails</td><td>Guessed / scraped addresses</td><td class="y">Official contacts only · 1 follow-up</td></tr>
+    <tr><td>India & Gulf</td><td>US-centric</td><td class="y">Region packs: India, Gulf, EU/UK, US</td></tr>
+    <tr><td>Price</td><td>$20–$400 / month</td><td class="y">Free & open source</td></tr>
+  </table>
+</section>
+
+<section id="install">
+  <h2>Install</h2>
+  <p class="sec-lead">Claude Code:</p>
+  <pre id="cmd">/plugin marketplace add &lt;owner&gt;/job-hunter
+/plugin install job-hunter@job-hunter-marketplace</pre>
+  <p class="sec-lead" style="margin-top:22px">Claude app: download <code>job-hunter.plugin</code> from the latest <a class="rel" href="#">release</a> and open it. Then say <b>“set up job hunter”</b> and attach your resume.</p>
+  <p class="sec-lead">Recommended connections: email (Gmail/Outlook), Claude in Chrome, calendar.</p>
+</section>
+
+<section id="quick">
+  <h2>Zero setup? Just tailor one resume.</h2>
+  <p class="sec-lead">Install the plugin (or just the <code>quick-tailor</code> skill), then paste a job description and attach your resume:</p>
+  <pre>tailor my resume to this job: &lt;paste the job description&gt;</pre>
+  <p class="sec-lead" style="margin-top:16px">You get an ATS-friendly resume, a before/after keyword match score, honest gaps and an optional cover letter — in about a minute.</p>
+</section>
+
+<section id="results">
+  <h2>Real results</h2>
+  <p class="sec-lead">Response rates are shared anonymously by users (opt-in, counts only) and published on the <a class="res" href="#">results page</a>. Using job-hunter? Ask Claude: <b>“share my job-hunter stats”</b>.</p>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <details><summary>Will it apply to jobs without asking me?</summary><p>No. It prepares everything, shows you one table, and only submits or sends what you approve — one at a time, within the daily limit you set.</p></details>
+  <details><summary>Can it get my LinkedIn account restricted?</summary><p>LinkedIn prohibits automation of its site. job-hunter reads LinkedIn in your own browser at human pace and leaves the final click to you; for speed it relies on public company job APIs instead.</p></details>
+  <details><summary>Will it make things up to pass ATS filters?</summary><p>Never. Every number, skill, employer and certification is checked against your master profile. Missing requirements are reported as gaps, with a plan to close them.</p></details>
+  <details><summary>Where is my data stored?</summary><p>In a local <code>job-hunt/</code> folder on your machine. Nothing is shared unless you choose to submit anonymous stats.</p></details>
+  <details><summary>What do I need?</summary><p>Claude (Claude Code or the Claude app with plugins), Python 3.9+ for the helper scripts, and optionally email/browser/calendar connections.</p></details>
+</section>
+
+<footer>🎯 job-hunter · MIT licence · not affiliated with any job board or ATS vendor · <a class="gh" href="#">Source on GitHub</a></footer>
+</div>
+<script>
+// On GitHub Pages (<owner>.github.io/<repo>/) fill in the real repo links automatically.
+(function(){
+  var h = location.hostname, m = h.match(/^([^.]+)\.github\.io$/);
+  if(!m) return;
+  var owner = m[1], repo = (location.pathname.split('/')[1] || 'job-hunter');
+  var base = 'https://github.com/' + owner + '/' + repo;
+  document.querySelectorAll('a.gh').forEach(function(a){ a.href = base; });
+  document.querySelectorAll('a.rel').forEach(function(a){ a.href = base + '/releases/latest'; });
+  document.querySelectorAll('a.res').forEach(function(a){ a.href = base + '/blob/main/docs/RESULTS.md'; });
+  var c = document.getElementById('cmd'); if(c) c.textContent = c.textContent.replace('<owner>', owner);
+})();
+</script>
+</body>
+</html>

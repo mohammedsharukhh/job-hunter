@@ -30,7 +30,7 @@ job-hunt/
 5. **Fill gaps with questions, not guesses.** Ask for measurable results (numbers, users, ratings, % improvements). Mark unknowns `TODO`.
 6. **Build `preferences.yaml`** from `${CLAUDE_PLUGIN_ROOT}/templates/preferences.example.yaml`. Ask (AskUserQuestion when available, max 4 at a time): target titles, locations / remote, level, notice period, work-authorization notes to state, salary expectation (optional), companies to avoid, daily email limit, email sending mode (approve the day's list once, or review each email), resume template (classic / modern / compact).
 7. **Create the tracker:** `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/tracker.py init --dir job-hunt`
-8. Offer **linkedin-profile** to align LinkedIn with the new profile, and **daily-brief** scheduling.
+8. Offer **job-watchlist** for their top target companies (be among the first applicants), **linkedin-profile** to align LinkedIn with the new profile, and **daily-brief** scheduling.
 9. Confirm in two or three lines what was set up and suggest `/job-hunter:job-hunt` as the next step.
 
 ## Rules

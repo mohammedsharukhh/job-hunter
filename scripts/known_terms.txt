@@ -1,0 +1,123 @@
+# Technology / tool / method terms the fact checker watches for. If one appears in a
+# tailored resume but not in profile.md, it was probably invented. Add terms via PR.
+# --- mobile
+Swift
+SwiftUI
+UIKit
+Objective-C
+Combine
+RxSwift
+Core Data
+SwiftData
+Realm
+XCTest
+Swift Testing
+Fastlane
+Xcode Cloud
+TestFlight
+StoreKit
+ARKit
+Core ML
+CoreML
+Metal
+WidgetKit
+App Intents
+CarPlay
+HealthKit
+MapKit
+CloudKit
+Kotlin
+Jetpack Compose
+Flutter
+Dart
+React Native
+Ionic
+Xamarin
+# --- web/backend
+JavaScript
+TypeScript
+React
+Angular
+Vue
+Next.js
+Node.js
+Express
+Django
+Flask
+FastAPI
+Spring Boot
+Ruby on Rails
+Laravel
+GraphQL
+gRPC
+Golang
+Rust
+C++
+C#
+.NET
+Java
+PHP
+Ruby
+Scala
+# --- data
+SQL
+PostgreSQL
+MySQL
+MongoDB
+Redis
+Elasticsearch
+Kafka
+Spark
+Hadoop
+Airflow
+dbt
+Snowflake
+BigQuery
+Redshift
+Databricks
+Tableau
+Power BI
+Looker
+pandas
+NumPy
+scikit-learn
+TensorFlow
+PyTorch
+# --- cloud/devops
+AWS
+Azure
+GCP
+Google Cloud
+Docker
+Kubernetes
+Terraform
+Jenkins
+GitHub Actions
+GitLab CI
+CircleCI
+Bitrise
+Firebase
+Supabase
+Heroku
+Linux
+# --- enterprise / procurement / engineering
+SAP
+SAP MM
+SAP Ariba
+Oracle
+Coupa
+Salesforce
+Jira
+SolidWorks
+AutoCAD
+ANSYS
+CATIA
+Creo
+MATLAB
+Primavera
+MS Project
+Lean
+Kaizen
+Six Sigma
+GD&T
+Incoterms

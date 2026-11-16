@@ -109,8 +109,11 @@ def render(md_path, out_base, template="classic"):
                 p.paragraph_format.tab_stops.add_tab_stop(Inches(8.5 - 2 * T["side"]), alignment=2)
                 r = p.add_run("\t" + right.strip()); r.font.size = Pt(T["body"] - 0.5); r.font.name = T["font"]; r.italic = True
         elif re.match(r"^\s*[-*] ", line):
-            p = doc.add_paragraph(style="List Bullet"); spacing(p, 0, 1)
-            add_runs(p, re.sub(r"^\s*[-*] ", "", line))
+            # plain "•" + hanging indent: ATS-safe (Word's list bullets use a Symbol-font glyph)
+            p = doc.add_paragraph(); spacing(p, 0, 1)
+            p.paragraph_format.left_indent = Inches(0.22)
+            p.paragraph_format.first_line_indent = Inches(-0.16)
+            add_runs(p, "\u2022 " + re.sub(r"^\s*[-*] ", "", line))
         else:
             p = doc.add_paragraph(); spacing(p, 0, 2)
             add_runs(p, line.strip())
