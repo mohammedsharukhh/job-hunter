@@ -2,14 +2,14 @@
 
 # 🎯 job-hunter
 
-**Your honest AI job-search assistant for Claude.**
-Finds jobs within hours of posting · writes a tailored resume for every job · applies and emails HR after one daily approval · tracks every reply.
+**A Claude plugin with 18 skills that job hunts for you — honestly.**
+Finds jobs within hours of posting · writes a tailored, ATS-tested resume for every job · applies and emails HR after one daily approval · tracks every reply.
 
 [![CI](https://github.com/mohammedsharukhh/job-hunter/actions/workflows/ci.yml/badge.svg)](https://github.com/mohammedsharukhh/job-hunter/actions/workflows/ci.yml)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 ![Free](https://img.shields.io/badge/price-free-5EEAD4)
 
-[**🚀 Get started**](docs/GETTING-STARTED.md) · [**🧰 All skills**](docs/SKILLS.md) · [**▶️ 2-min demo**](docs/job-hunter-demo.mp4) · [**🌐 Website**](https://mohammedsharukhh.github.io/job-hunter/) · [**❓ FAQ**](docs/FAQ.md)
+[**🚀 Get started**](docs/GETTING-STARTED.md) · [**🧰 All skills**](docs/SKILLS.md) · [**▶️ Watch the demo (1:17, with narration)**](docs/job-hunter-demo.mp4) · [**🌐 Website**](https://mohammedsharukhh.github.io/job-hunter/) · [**❓ FAQ**](docs/FAQ.md)
 
 <img src="docs/demo.gif" alt="job-hunter demo" width="720">
 
