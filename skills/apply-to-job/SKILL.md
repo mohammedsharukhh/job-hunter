@@ -22,7 +22,7 @@ description: Prepares and submits a job application on a company career portal o
 7. Update the tracker: `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/tracker.py update --dir job-hunt --id <id> --status applied --note "<portal, confirmation id>"`
 
 ## Batch mode
-When applying to several jobs, fill each up to the review gate, then present all summaries together for one round of approvals. Submit only the approved ones.
+When applying to several jobs, fill each up to the review gate, then present all summaries in one table for a single approval. Then submit the approved ones **one at a time**, confirming each confirmation page before moving on. Anything new after approval (an extra screening question, a changed answer) goes back to the user first.
 
 ## Stop and ask when
 - The site shows a captcha, bot warning, or "unusual activity".

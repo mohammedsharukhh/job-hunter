@@ -1,0 +1,14 @@
+# Region pack: United States
+job_boards: [linkedin_jobs, indeed, glassdoor, wellfound, dice, builtin, hired, company_career_pages]
+resume:
+  length: "1 page (<10 yrs)"
+  photo: false
+  personal_details: "Name, city/state, phone, email, LinkedIn, GitHub. Never include photo, age, DOB, marital status, nationality."
+  common_fields: [work_authorization, sponsorship_needed, salary_expectation, start_date]
+salary:
+  unit: "annual base + bonus + equity (RSUs)"
+  sources: [Levels.fyi, Glassdoor, Payscale, H1B salary database, pay-transparency ranges in postings]
+tips:
+  - "Many states require salary ranges in postings — use them as anchors."
+  - "Answer work-authorization questions truthfully; flag H-1B sponsorship needs early."
+  - "Expect recruiter screen → technical phone screen → onsite/virtual loop."

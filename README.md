@@ -1,16 +1,40 @@
 # job-hunter 🎯 — an open-source job-search copilot for Claude
 
-A Claude plugin (works in Claude Code and the Claude desktop app) that turns your job hunt into one daily review:
+A Claude plugin (Claude Code and the Claude desktop app) that turns your job hunt into **one daily approval**. It finds jobs, tailors your resume to every job description, applies on career portals, emails HR one by one, chases referrals, preps interviews, and learns what actually gets replies.
 
+![Dashboard](docs/dashboard.png)
+
+## What's inside — 15 skills
+
+**Core loop**
 | Skill | What it does |
 |---|---|
-| `job-hunt-setup` | Builds your **master profile** from your resume, your preferences, and an application tracker |
-| `find-jobs` | Searches job-board connectors (e.g. Indeed), LinkedIn/Naukri/Bayt via your browser, and company **career portals**; scores each job's fit |
-| `tailor-resume` | Writes an **ATS-friendly resume tailored to each job description**, with a keyword-coverage report — using only true facts from your profile — and exports DOCX/PDF |
-| `apply-to-job` | Fills the application on the career portal with your tailored resume, **stops for your approval** before Submit |
-| `hr-outreach` | Finds the **official** recruiting contact (from the posting or company careers page) and drafts a personalised email with the resume attached; sends only what you approve, with a daily cap |
-| `check-updates` | Reads your inbox for confirmations, tests, interview invites, rejections and offers; updates the tracker and drafts replies |
-| `job-hunt` | Runs the whole loop: updates → find → tailor → prepare → **one approval round** → submit/send |
+| `job-hunt` | Runs everything: replies → find → tailor → referrals → prepare → **one approval** → submit/send one by one → dashboard |
+| `job-hunt-setup` | Builds your master profile from your resume, preferences, region pack and tracker |
+| `find-jobs` | Searches job-board connectors, LinkedIn/Naukri/Bayt etc. in your browser, and company career portals. Filters **duplicates, ghost jobs and scams**; fit score learns from jobs you reject |
+| `tailor-resume` | ATS-friendly resume tailored to each JD (3 layouts), keyword-coverage report, cover letter — only true facts |
+| `apply-to-job` | Fills portal applications with the tailored resume; you approve before submit |
+| `hr-outreach` | Finds the official HR/careers contact and sends personalised emails **one at a time** after you approve the day's list; daily cap, one follow-up |
+| `check-updates` | Reads your inbox for confirmations, tests, interviews, rejections, offers; updates tracker, drafts replies |
+
+**Get hired**
+| Skill | What it does |
+|---|---|
+| `interview-prep` | Company brief, likely questions (HR, technical, DSA, resume deep-dive), STAR answers, **live mock interview with scores** |
+| `skill-gap-coach` | Finds skills you keep missing across target JDs → learning plan + portfolio projects |
+| `referral-finder` | Finds 1st/2nd-degree connections and alumni at target companies, drafts referral asks |
+| `offer-negotiation` | Market salary check for role + city, offer comparison, negotiation email & call script |
+| `linkedin-profile` | Recruiter-optimised headline, About, skills and Open-to-work settings |
+
+**Learn & track**
+| Skill | What it does |
+|---|---|
+| `job-insights` | Reply rates by source, resume layout, email template and fit band → recommends changes (A/B testing) |
+| `job-dashboard` | Visual dashboard: funnel, response rate, needs-action, follow-ups due |
+| `daily-brief` | Short morning summary; can schedule itself every weekday |
+
+**Region packs:** India · Gulf · EU/UK · US (job boards, resume conventions, salary sources).
+**Example profiles:** iOS developer · procurement · mechanical engineer · data analyst.
 
 ## Install
 
@@ -19,40 +43,44 @@ A Claude plugin (works in Claude Code and the Claude desktop app) that turns you
 /plugin marketplace add <your-github-username>/job-hunter
 /plugin install job-hunter@job-hunter-marketplace
 ```
+**Claude desktop app** — download `job-hunter.plugin` from [Releases](../../releases) and open it.
 
-**Claude desktop app** — download the `.plugin` file from Releases (or zip this repo) and add it under Customize → Plugins.
+Then say **"set up job hunter"** and attach your resume. After that, every day: **"run my job hunt"**.
 
-Then say: **"set up job hunter"** and attach your resume.
+### Connect (recommended)
+- **Email** (Gmail/Outlook connector) — sending, drafts, reply tracking
+- **Browser** (Claude in Chrome) — career portals, LinkedIn, Naukri… with your own sign-ins
+- **Calendar** — interviews
+- **Job board** connector (e.g. Indeed) — structured search
 
-### Optional connections (recommended)
-- **Email** (Gmail / Outlook connector) — drafts, sending, reply tracking
-- **Calendar** — interview scheduling
-- **Job board** (e.g. Indeed connector) — structured job search
-- **Browser** (Claude in Chrome) — career portals and job-board applications, using your own signed-in session
+Scripts need Python 3.9+ and `pip install python-docx`; LibreOffice for PDF export (optional).
 
-Dependencies for the scripts: Python 3.9+, `pip install python-docx`; LibreOffice for PDF export (optional).
-
-## Daily use
+## Examples
 ```
 run my job hunt — iOS roles in Bangalore and Doha, top 5
 tailor my resume for this JD: <paste>
-check my job emails
+prep me for my Acme interview on Thursday — mock interview please
+what's working in my applications?
+I got an offer from Beta Corp — is it fair?
+send me a job brief every weekday at 8:30am
 ```
-Schedule it: *"run my job hunt every weekday at 9am"* — scheduled runs prepare everything and wait for your approval.
 
-## Your data
-Everything lives in a local `job-hunt/` folder (profile, preferences, tracker.csv, one folder per application). It's in `.gitignore` — never commit it.
+## Your data stays yours
+Everything lives in a local `job-hunt/` folder (profile, tracker, applications). It's git-ignored — never commit it.
 
-## Guardrails (by design, please keep them in forks)
-- **No fabrication** — tailored resumes only reword/reorder facts in your master profile; gaps are reported, not invented.
-- **Human approval** before every submission and every email.
-- **No spam** — official contacts only, no guessed/scraped personal emails, daily send cap, one follow-up max, honours "not interested".
-- **No credentials** — Claude never types passwords/OTPs, solves captchas, or handles ID/bank details.
-- **Respects site terms** — human-paced browsing, stops at bot checks. Some sites forbid automation; you are responsible for using it within their terms.
-- **Scam flags** — fees to apply, ID/bank requests before an offer, etc.
+## Guardrails (please keep them in forks)
+- **No fabrication** — resumes only reword/reorder facts in your profile; gaps are reported, not invented.
+- **Your approval first** — approve the day's list once (or each item); then items go out **one by one** with a gap between sends and a daily cap.
+- **Official contacts only** — no guessed/scraped personal emails; honours "not interested"; max one follow-up.
+- **No credentials** — never types passwords/OTPs, solves captchas, or handles ID/bank details.
+- **Respect site terms** — human-paced browsing, stops at bot checks. You're responsible for using it within each site's terms.
+- **Scam flags** — fees to apply, ID/bank requests before an offer, unrealistic pay.
+
+## Releasing
+Push a tag like `v0.2.0`. The GitHub Action validates the plugin, smoke-tests the scripts and attaches `job-hunter.plugin` to the release.
 
 ## Contributing
-PRs welcome: new job-board guides, regional templates (Gulf, India, EU, US), better ATS rules, more resume layouts. See `CONTRIBUTING.md`.
+PRs welcome — new region packs, job-board guides, resume layouts, question banks for other roles. See `CONTRIBUTING.md`.
 
 ## License
 MIT

@@ -1,0 +1,13 @@
+# Region pack: EU & UK
+job_boards: [linkedin_jobs, indeed, stepstone, glassdoor, welcome_to_the_jungle, otta, eures, reed, totaljobs]
+resume:
+  length: "UK: 2-page CV; EU: 1–2 pages (Europass optional, not preferred by tech firms)"
+  photo: "UK: no; Germany/Austria/Switzerland: often expected; elsewhere optional"
+  personal_details: "City, right-to-work/visa status. Skip DOB in UK."
+  common_fields: [right_to_work, visa_sponsorship_needed, notice_period, salary_expectation]
+salary:
+  unit: "annual gross; compare after tax and cost of living"
+  sources: [Glassdoor, Levels.fyi, StepStone salary report, Honeypot/Hays reports, Payscale]
+tips:
+  - "If sponsorship is needed, target companies on the UK Home Office licensed-sponsor list / EU Blue Card employers."
+  - "Cover letters are read more often than in India/US — keep one ready."

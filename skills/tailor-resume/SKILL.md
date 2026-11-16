@@ -23,11 +23,12 @@ description: Builds an ATS-friendly resume (and optional cover letter) tailored 
    - Projects chosen for relevance to this JD.
    - Fit on `resume.max_pages` (default 1 page for < 5 yrs experience).
 4. **Save** as `job-hunt/applications/<job>/resume.md` using the exact Markdown structure in `references/ats-rules.md`, then render:
-   `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/render_resume.py job-hunt/applications/<job>/resume.md --pdf`
-   (produces `resume.docx`, and `resume.pdf` when LibreOffice is available).
+   `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/render_resume.py job-hunt/applications/<job>/resume.md --pdf --template <classic|modern|compact> --out job-hunt/applications/<job>/<First>_<Last>_<Role>_Resume`
+   (produces DOCX, and PDF when LibreOffice is available). Use `resume.template` from preferences; if job-insights shows another template performing better, use that; if `resume.ab_test` is true, alternate templates across similar jobs. Use `compact` when content runs over one page.
 5. **Cover letter (if the application asks or the user wants one):** 3 short paragraphs — why this company (one specific, verifiable detail from their site/JD), the 2–3 strongest matching achievements, a clear close. Save to `cover-letter.md`. Same no-invention rule.
 6. **Report** to the user: keyword coverage % (covered ÷ total), the table of missing keywords (gaps), and anything you need confirmed. Update tracker status to `tailored`:
-   `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/tracker.py update --dir job-hunt --id <id> --status tailored`
+   `python3 ${CLAUDE_PLUGIN_ROOT}/scripts/tracker.py update --dir job-hunt --id <id> --status tailored --resume-variant <template>`
+7. Follow the region pack's conventions (`templates/regions/<region>.yaml`): photo or not, length, personal details. E.g. Gulf CVs often state nationality, visa status and notice period; US resumes never include photo, age or marital status.
 
 ## Quality check before finishing
 - Open the rendered DOCX/PDF text (e.g. `pandoc resume.docx -t plain`) and confirm it reads cleanly, top to bottom, with no broken sections.
