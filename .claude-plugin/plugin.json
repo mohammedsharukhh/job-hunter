@@ -1,10 +1,23 @@
 {
   "name": "job-hunter",
-  "version": "0.1.0",
-  "description": "AI job-search copilot: finds matching jobs, tailors an ATS-friendly resume to each job description, prepares applications on career portals, drafts HR outreach emails, and tracks replies in your inbox. Human-approved at every send/submit step.",
+  "version": "0.2.0",
+  "description": "AI job-search copilot: finds and filters matching jobs, tailors an ATS-friendly resume to each job description, prepares portal applications, sends HR emails one by one after you approve the list, finds referrals, preps interviews, negotiates offers, learns from results and shows a dashboard.",
   "author": {
     "name": "Mahamed Fayaz M"
   },
   "license": "MIT",
-  "keywords": ["jobs", "resume", "ats", "job-search", "career", "cover-letter", "recruiting", "email"]
+  "keywords": [
+    "jobs",
+    "resume",
+    "ats",
+    "job-search",
+    "career",
+    "cover-letter",
+    "recruiting",
+    "email",
+    "interview-prep",
+    "referrals",
+    "salary-negotiation",
+    "linkedin"
+  ]
 }

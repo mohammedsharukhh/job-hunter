@@ -1,0 +1,14 @@
+# Region pack: India
+job_boards: [naukri, linkedin_jobs, indeed_india, instahyre, wellfound, cutshort, foundit, iimjobs, hirist]
+resume:
+  length: "1 page (<5 yrs), 2 pages max"
+  photo: false
+  personal_details: "Name, phone, email, city, LinkedIn. Skip DOB, marital status, father's name."
+  common_fields: [notice_period, current_ctc, expected_ctc, current_location, willing_to_relocate]
+salary:
+  unit: "CTC in LPA (lakhs per annum)"
+  sources: [AmbitionBox, Glassdoor India, Levels.fyi, Naukri salary insights, LinkedIn Salary]
+tips:
+  - "Notice period matters a lot — state it; 'immediate joiner' or ≤30 days gets priority."
+  - "Naukri: keep profile updated daily (resume headline + key skills) to rank higher in recruiter search."
+  - "Expect online assessments (HackerRank/HackerEarth) for product companies."

@@ -1,0 +1,15 @@
+# Region pack: Gulf (Qatar, UAE, Saudi Arabia, Oman, Kuwait, Bahrain)
+job_boards: [linkedin_jobs, bayt, gulftalent, naukrigulf, indeed_gulf, dubizzle_jobs, company_career_pages]
+resume:
+  length: "2 pages acceptable"
+  photo: "optional — common in the region; professional headshot only"
+  personal_details: "Nationality, current country of residence, visa status (e.g. transferable/residence permit), driving licence (GCC/home), notice period, languages (Arabic is a plus). Only include what the user chooses to share."
+  common_fields: [nationality, visa_status, notice_period, current_salary, expected_salary, driving_license]
+salary:
+  unit: "monthly, in local currency (QAR/AED/SAR); package = basic + housing + transport + other allowances"
+  sources: [GulfTalent salary reports, Bayt salary, Glassdoor, Hays/Michael Page/Cooper Fitch Gulf salary guides]
+  compare: "Usually tax-free; compare total package incl. housing, flights, schooling, end-of-service gratuity."
+tips:
+  - "Big employers recruit through their own portals and agencies; verify agencies are licensed."
+  - "Never pay for a visa/job offer — common scam in the region."
+  - "Being already in-country with a transferable visa is a strong advantage; state it if true."

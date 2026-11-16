@@ -1,32 +1,38 @@
 # Job-hunter preferences — edit freely
+regions: [india, gulf]               # india | gulf | eu_uk | us  (see templates/regions/)
 target_titles:
   - iOS Developer
   - Mobile Engineer (iOS)
-seniority: [junior, mid]            # intern | junior | mid | senior | lead
+seniority: [junior, mid]             # intern | junior | mid | senior | lead
 locations:
   - Bangalore, India
   - Doha, Qatar
 remote: hybrid_or_remote_ok          # onsite_only | hybrid_or_remote_ok | remote_only
 min_fit_score: 70                    # 0-100; jobs below this are skipped
-salary_expectation: ""               # optional, stated only when a form asks
+daily_new_jobs: 5                    # new jobs to prepare per run
+max_posting_age_days: 30             # older listings treated as likely ghost jobs
+salary_expectation: ""               # optional, used only when a form asks
 notice_period: "30 days"
 avoid_companies: []
 must_have_keywords: [Swift]
 exclude_keywords: [unpaid]
 
-sources:                             # where find-jobs looks
-  - indeed_connector                 # if connected
-  - linkedin_jobs                    # via browser
-  - naukri                           # via browser
-  - company_career_pages             # list below
+sources:                             # where find-jobs looks (region packs add more)
+  - indeed_connector
+  - linkedin_jobs
+  - company_career_pages
 career_pages: []                     # e.g. https://careers.example.com/jobs
 
 outreach:
-  daily_email_limit: 10              # hard cap on outreach emails per day
-  require_approval: true             # ALWAYS true for sending; changing it does not remove the approval step
+  mode: approve_list                 # approve_list = approve the day's list once, sent one by one
+                                     # review_each  = confirm every email individually
+  daily_email_limit: 15
+  send_gap_minutes: 3                # wait between emails
   follow_up_after_days: 7
   max_follow_ups: 1
 
 resume:
-  format: [docx, pdf]
+  template: classic                  # classic | modern | compact
+  ab_test: false                     # alternate templates to learn which gets more replies
   max_pages: 1
+  format: [pdf, docx]
