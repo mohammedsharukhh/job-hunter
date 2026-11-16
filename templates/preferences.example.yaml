@@ -1,0 +1,32 @@
+# Job-hunter preferences — edit freely
+target_titles:
+  - iOS Developer
+  - Mobile Engineer (iOS)
+seniority: [junior, mid]            # intern | junior | mid | senior | lead
+locations:
+  - Bangalore, India
+  - Doha, Qatar
+remote: hybrid_or_remote_ok          # onsite_only | hybrid_or_remote_ok | remote_only
+min_fit_score: 70                    # 0-100; jobs below this are skipped
+salary_expectation: ""               # optional, stated only when a form asks
+notice_period: "30 days"
+avoid_companies: []
+must_have_keywords: [Swift]
+exclude_keywords: [unpaid]
+
+sources:                             # where find-jobs looks
+  - indeed_connector                 # if connected
+  - linkedin_jobs                    # via browser
+  - naukri                           # via browser
+  - company_career_pages             # list below
+career_pages: []                     # e.g. https://careers.example.com/jobs
+
+outreach:
+  daily_email_limit: 10              # hard cap on outreach emails per day
+  require_approval: true             # ALWAYS true for sending; changing it does not remove the approval step
+  follow_up_after_days: 7
+  max_follow_ups: 1
+
+resume:
+  format: [docx, pdf]
+  max_pages: 1

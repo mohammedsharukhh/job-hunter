@@ -1,0 +1,7 @@
+# Personal data — never commit
+job-hunt/
+*.pdf
+*.docx
+!examples/*.md
+__pycache__/
+.DS_Store
