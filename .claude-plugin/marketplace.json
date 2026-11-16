@@ -1,0 +1,14 @@
+{
+  "name": "job-hunter-marketplace",
+  "owner": {
+    "name": "Mahamed Fayaz M"
+  },
+  "plugins": [
+    {
+      "name": "job-hunter",
+      "source": "./",
+      "description": "Find jobs, tailor resumes to each JD, prepare applications, draft HR outreach and track replies — with your approval before anything is sent.",
+      "version": "0.1.0"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "job-hunter",
+  "version": "0.1.0",
+  "description": "AI job-search copilot: finds matching jobs, tailors an ATS-friendly resume to each job description, prepares applications on career portals, drafts HR outreach emails, and tracks replies in your inbox. Human-approved at every send/submit step.",
+  "author": {
+    "name": "Mahamed Fayaz M"
+  },
+  "license": "MIT",
+  "keywords": ["jobs", "resume", "ats", "job-search", "career", "cover-letter", "recruiting", "email"]
+}
