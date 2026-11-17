@@ -4,6 +4,7 @@
 - Single column. No tables, text boxes, images, icons, headers/footers for key info, or skill bars.
 - Standard section names: Summary, Skills, Experience, Projects, Education, Certifications.
 - Standard fonts (Calibri/Arial), 10.5–11 pt body; dates as `Mon YYYY – Mon YYYY`.
+- **Plain black text only** — no coloured headings, names, links or lines.
 - Contact line at the top in plain text (email, phone, city, LinkedIn, GitHub).
 - File name: `Firstname_Lastname_<Role>_Resume.pdf`.
 

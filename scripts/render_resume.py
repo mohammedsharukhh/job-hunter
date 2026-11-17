@@ -24,11 +24,11 @@ except ImportError:
 FONT = "Calibri"
 TEMPLATES = {
     "classic": dict(font="Calibri", body=10.5, name=18, head=11.5, margin=0.6, side=0.7,
-                    align="center", accent=(0x1F, 0x3A, 0x5F), upper=True, rule=True),
+                    align="center", accent=(0x00, 0x00, 0x00), upper=True, rule=True),
     "modern":  dict(font="Arial", body=10, name=20, head=11, margin=0.55, side=0.65,
-                    align="left", accent=(0x0E, 0x7C, 0x86), upper=False, rule=True),
+                    align="left", accent=(0x00, 0x00, 0x00), upper=False, rule=True),
     "compact": dict(font="Calibri", body=9.5, name=15, head=10.5, margin=0.45, side=0.55,
-                    align="center", accent=(0x33, 0x33, 0x33), upper=True, rule=True),
+                    align="center", accent=(0x00, 0x00, 0x00), upper=True, rule=True),
 }
 T = TEMPLATES["classic"]
 
@@ -49,7 +49,7 @@ def bottom_border(p):
     pPr = p._p.get_or_add_pPr()
     bdr = OxmlElement("w:pBdr")
     b = OxmlElement("w:bottom")
-    for k, v in {"w:val": "single", "w:sz": "6", "w:space": "1", "w:color": "444444"}.items():
+    for k, v in {"w:val": "single", "w:sz": "6", "w:space": "1", "w:color": "000000"}.items():
         b.set(qn(k), v)
     bdr.append(b)
     pPr.append(bdr)

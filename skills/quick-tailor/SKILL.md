@@ -18,7 +18,7 @@ Extract 15–25 keywords/phrases exactly as written (tools, frameworks, methods,
 For each keyword, find proof in the resume: covered / partial / missing. **Never invent** experience, tools, numbers, employers, titles, dates or certifications. You may reword, reorder, merge, emphasise and cut. If the JD wants something the resume doesn't show, it's a gap — ask the user if they actually have it; only add it if they confirm.
 
 ## 4. Write the tailored resume
-- Single column, standard headings (Summary, Skills, Experience, Projects, Education, Certifications), no tables, icons, photos, text boxes or skill bars.
+- Plain black text only (no colours), single column, standard headings (Summary, Skills, Experience, Projects, Education, Certifications), no tables, icons, photos, text boxes or skill bars.
 - Headline mirroring the JD title only if truthful; 3–4 line summary built from the strongest true matches.
 - Skills ordered by JD priority, using the JD's exact spelling ("SwiftUI", "Power BI").
 - Bullets: action verb + what + tool + measurable result; most relevant first; JD keywords woven in naturally, no stuffing.
