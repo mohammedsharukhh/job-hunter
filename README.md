@@ -95,4 +95,4 @@ _No submissions yet — be the first: ask Claude “share my job-hunter stats”
 
 ⭐ **If job-hunter helps you, star the repo so others can find it.**
 
-MIT © Mahamed Fayaz M
+MIT © Mohammed Sharuk M S
