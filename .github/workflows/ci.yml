@@ -1,0 +1,30 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -q && sudo apt-get install -y -q poppler-utils libreoffice-writer-nogui
+          pip install python-docx pypdf
+      - name: Validate manifests and skill frontmatter
+        run: |
+          python -m json.tool .claude-plugin/plugin.json > /dev/null
+          python -m json.tool .claude-plugin/marketplace.json > /dev/null
+          for f in skills/*/SKILL.md; do
+            d=$(basename $(dirname "$f"))
+            grep -q "^name: $d$" "$f" || { echo "name must equal folder in $f"; exit 1; }
+            grep -q '^description: ' "$f" || { echo "missing description in $f"; exit 1; }
+            w=$(wc -w < "$f"); [ "$w" -lt 3000 ] || { echo "$f too long ($w words)"; exit 1; }
+          done
+      - name: Unit tests
+        run: python -m unittest discover -s tests -v
+      - name: Golden quality regression (honest resumes pass, fabricated ones fail)
+        run: python evals/run_golden.py
