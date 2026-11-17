@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.2
+- Author: Mohammed Sharuk M S
+- New narrated demo video (1:17) and README animation
+
 ## 0.3.1
 - Starts automatically: checks your job hunt every time Claude opens and runs today's job hunt if needed
 - Setup now creates the daily run, hourly watchlist and morning brief schedules for you
